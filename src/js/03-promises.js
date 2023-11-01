@@ -9,7 +9,7 @@ function handlerSubmit(evt) {
     step: Number(evt.target.elements.step.value),
     amount: Number(evt.target.elements.amount.value),
   };
-  for (let i = 0; i <= options.amount; i++) {
+  for (let i = 0; i < options.amount; i++) {
     createPromise(i, options.delay + i * options.step)
       .then(({ position, delay }) => {
         Notify.success(`✅ Fulfilled promise ${position + 1} in ${delay} ms`);
